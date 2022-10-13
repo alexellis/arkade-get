@@ -1,8 +1,6 @@
 const core = require('@actions/core');
-const wait = require('./wait');
-
-const schema = require("./schema.json")
 const exec = require('@actions/exec');
+const schema = require("./schema.json")
 
 // most @actions toolkit packages have async methods
 async function run() {

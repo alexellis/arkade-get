@@ -3955,14 +3955,6 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 653:
-/***/ ((module) => {
-
-module.exports = eval("require")("./wait");
-
-
-/***/ }),
-
 /***/ 505:
 /***/ ((module) => {
 
@@ -4125,10 +4117,8 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 const core = __nccwpck_require__(186);
-const wait = __nccwpck_require__(653);
-
-const schema = __nccwpck_require__(505)
 const exec = __nccwpck_require__(514);
+const schema = __nccwpck_require__(505)
 
 // most @actions toolkit packages have async methods
 async function run() {
