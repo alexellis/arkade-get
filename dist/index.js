@@ -4136,9 +4136,9 @@ async function run() {
         core.info("Installing: " + tool + " with " + toolValue)
 
         if(toolValue == "latest") {
-          await exec.exec('arkade get ' + tool)
+          await exec.exec('arkade get --progress=false --quiet=true ' + tool)
         } else {
-          await exec.exec('arkade get ' + tool + ' --version ' + toolValue)
+          await exec.exec('arkade get --progress=false --quiet=true ' + tool + ' --version ' + toolValue)
         }
 
         added++
