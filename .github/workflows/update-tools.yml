@@ -7,7 +7,12 @@ on:
 
   workflow_dispatch:
     inputs:
-      regenerate: "true"
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
 
   schedule:
     # Run workflow once a day to grab latest release
