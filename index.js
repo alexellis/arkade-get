@@ -1,12 +1,16 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
 const schema = require("./schema.json")
+const os = require('os')
+const path = require('path')
 
 // most @actions toolkit packages have async methods
 async function run() {
   try {
 
-    const arkadePath = "$HOME/.arkade/bin/"
+    const homedir = os.homedir()  
+    const arkadePath = path.join(homedir, "/.arkade/bin/")
+
     // Add arkade's path to the PATH environment variable
     core.addPath(arkadePath)
 
