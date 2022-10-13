@@ -4138,6 +4138,7 @@ async function run() {
 
     core.setOutput('tools', schema.length + " tools were installed");
 
+    
   } catch (error) {
     core.setFailed(error.message);
   }
