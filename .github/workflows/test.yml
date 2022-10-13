@@ -21,5 +21,5 @@ jobs:
     - uses: ./
       with:
         kubectl: latest
-        faas-cli: 0.14.10
+        faas_cli: 0.14.10
 
