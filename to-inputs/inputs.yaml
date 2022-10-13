@@ -2,8 +2,8 @@ inputs:
   argocd:
     description: 'Install argocd'
     required: false
-  argocd_autopilot:
-    description: 'Install argocd_autopilot'
+  argocd-autopilot:
+    description: 'Install argocd-autopilot'
     required: false
   arkade:
     description: 'Install arkade'
@@ -47,8 +47,8 @@ inputs:
   dive:
     description: 'Install dive'
     required: false
-  docker_compose:
-    description: 'Install docker_compose'
+  docker-compose:
+    description: 'Install docker-compose'
     required: false
   doctl:
     description: 'Install doctl'
@@ -56,8 +56,8 @@ inputs:
   eksctl:
     description: 'Install eksctl'
     required: false
-  faas_cli:
-    description: 'Install faas_cli'
+  faas-cli:
+    description: 'Install faas-cli'
     required: false
   flux:
     description: 'Install flux'
@@ -71,8 +71,8 @@ inputs:
   gh:
     description: 'Install gh'
     required: false
-  golangci_lint:
-    description: 'Install golangci_lint'
+  golangci-lint:
+    description: 'Install golangci-lint'
     required: false
   gomplate:
     description: 'Install gomplate'
@@ -104,8 +104,8 @@ inputs:
   influx:
     description: 'Install influx'
     required: false
-  inlets_pro:
-    description: 'Install inlets_pro'
+  inlets-pro:
+    description: 'Install inlets-pro'
     required: false
   inletsctl:
     description: 'Install inletsctl'
@@ -164,8 +164,8 @@ inputs:
   krew:
     description: 'Install krew'
     required: false
-  kube_bench:
-    description: 'Install kube_bench'
+  kube-bench:
+    description: 'Install kube-bench'
     required: false
   kubebuilder:
     description: 'Install kubebuilder'
@@ -224,8 +224,8 @@ inputs:
   nats:
     description: 'Install nats'
     required: false
-  nats_server:
-    description: 'Install nats_server'
+  nats-server:
+    description: 'Install nats-server'
     required: false
   nerdctl:
     description: 'Install nerdctl'
@@ -233,14 +233,14 @@ inputs:
   nova:
     description: 'Install nova'
     required: false
-  oh_my_posh:
-    description: 'Install oh_my_posh'
+  oh-my-posh:
+    description: 'Install oh-my-posh'
     required: false
   opa:
     description: 'Install opa'
     required: false
-  operator_sdk:
-    description: 'Install operator_sdk'
+  operator-sdk:
+    description: 'Install operator-sdk'
     required: false
   osm:
     description: 'Install osm'
@@ -263,14 +263,14 @@ inputs:
   promtool:
     description: 'Install promtool'
     required: false
-  rekor_cli:
-    description: 'Install rekor_cli'
+  rekor-cli:
+    description: 'Install rekor-cli'
     required: false
   rpk:
     description: 'Install rpk'
     required: false
-  run_job:
-    description: 'Install run_job'
+  run-job:
+    description: 'Install run-job'
     required: false
   sops:
     description: 'Install sops'

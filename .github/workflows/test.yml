@@ -22,7 +22,7 @@ jobs:
     - uses: ./
       with:
         kubectl: latest
-        faas_cli: 0.14.10
+        faas-cli: 0.14.10
     - name: check for faas-cli
       run: |
         $HOME/.arkade/bin/faas-cli version
