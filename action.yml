@@ -1,7 +1,6 @@
 name: 'Install arkade CLIs'
 description: 'Install arkade CLIs using inputs to the action'
 inputs:
-inputs:
   argocd:
     description: 'Install argocd'
     required: false
