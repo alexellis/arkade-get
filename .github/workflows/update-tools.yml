@@ -27,6 +27,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
+      - uses: alexellis/setup-arkade@v1
       - name: Install Go
         uses: actions/setup-go@v3
         with:
