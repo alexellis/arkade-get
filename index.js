@@ -11,6 +11,7 @@ async function run() {
     const homedir = os.homedir()  
     const arkadePath = path.join(homedir, "/.arkade/bin/")
 
+    core.info("Setting arkade's folder to: " + arkadePath)
     // Add arkade's path to the PATH environment variable
     core.addPath(arkadePath)
 

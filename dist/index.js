@@ -4119,12 +4119,17 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(186);
 const exec = __nccwpck_require__(514);
 const schema = __nccwpck_require__(505)
+const os = __nccwpck_require__(87)
+const path = __nccwpck_require__(622)
 
 // most @actions toolkit packages have async methods
 async function run() {
   try {
 
-    const arkadePath = "$HOME/.arkade/bin/"
+    const homedir = os.homedir()  
+    const arkadePath = path.join(homedir, "/.arkade/bin/")
+
+    core.info("Setting arkade's folder to: " + arkadePath)
     // Add arkade's path to the PATH environment variable
     core.addPath(arkadePath)
 
