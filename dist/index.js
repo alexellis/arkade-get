@@ -4124,6 +4124,10 @@ const schema = __nccwpck_require__(505)
 async function run() {
   try {
 
+    const arkadePath = "$HOME/.arkade/bin/"
+    // Add arkade's path to the PATH environment variable
+    core.addPath(arkadePath)
+
     let added = 0
     for(i = 0; i < schema.length; i++){
       let tool = schema[i]
