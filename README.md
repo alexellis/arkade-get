@@ -13,12 +13,14 @@ Specify either a version/tag, or "latest" to get the latest available.
         faas-cli: 0.14.10
     - name: check for faas-cli
       run: |
-        $HOME/.arkade/bin/faas-cli version
+        faas-cli version
 ```
 
-Optionally, move the binaries to $PATH:
+The binaries are placed in `$HOME/.arkade/bin/` and the action adds this to your `$PATH` variable.
 
-```
+Optionally, if you wish (this is not necessary), you can move the binaries to `/usr/local/bin/`:
+
+```yaml
     - name: Install custom CLIs
       run: |
         sudo mv $HOME/.arkade/bin/* /usr/local/bin/
