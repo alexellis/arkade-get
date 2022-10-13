@@ -1,7 +1,7 @@
 name: 'Install arkade CLIs'
 description: 'Install arkade CLIs using inputs to the action'
 
-# The section below is generated using action.yml.tmpl
+# The section below is generated using a cron schedule that runs once per day
 
 inputs:
   argocd:
