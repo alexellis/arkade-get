@@ -6,21 +6,24 @@ const schema = require("./schema.json")
 async function run() {
   try {
 
-
+    let added = 0
     for(i = 0; i < schema.length; i++){
       let tool = schema[i].name
+      core.info("Checking for: " + tool )
       tool = tool.replace(/_/g, "-")
+      core.info("Renamed as: " + tool )
+
       let toolValue = core.getInput(tool);
 
-      if(toolValue) {
+      if(toolValue && toolValue.length) {
         core.info("Installing: " + tool + " with " + toolValue)
 
         await exec.exec('arkade get ' + tool + ' --version ' + toolValue)
+        added++
       }
     }
 
-    core.setOutput('tools', schema.length + " tools were installed");
-
+    core.setOutput('tools', added+ " tools were installed");
 
   } catch (error) {
     core.setFailed(error.message);
