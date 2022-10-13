@@ -1,0 +1,43 @@
+name: "Update tools from arkade get"
+on:
+  push:
+    branches:
+      - master
+      - main
+
+  workflow_dispatch:
+    inputs:
+      regenerate: "true"
+
+  schedule:
+    # Run workflow once a day to grab latest release
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        go-version: [1.18.x]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@master
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Regenerate changes
+        run: |
+          cd to-inputs
+          go run . -j schema.json -y inputs.yaml
+          cp schema.json ../
+          cat ../action.yml.tmpl | INPUTS=$(cat inputs.yaml) envsubst > ../action.yml
+          npm run prepare
+      - name: Commit changes
+        run: |
+              IFS="/" read USERNAME REPONAME <<<$GITHUB_REPOSITORY
+              git add .
+              git config --global user.name "$USERNAME"
+              git config --global user.email "$USERNAME@users.noreply.github.com"
+              git diff-index --quiet HEAD || git commit -m "syncup with latest version"
+              git push

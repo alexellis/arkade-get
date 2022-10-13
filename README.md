@@ -1,6 +1,6 @@
 # setup-arkade-v2
 
-Install CLI tools using arkade
+Install CLI tools using arkade:
 
 ```yaml
     - uses: alexellis/setup-arkade@v1
@@ -15,14 +15,22 @@ Install CLI tools using arkade
 
 # Development
 
-Regenerate the list of tools:
+## Update the dist folder
+
+Do this after making a change.
+
+```
+npm run prepare
+```
+
+## Regenerate the list of tools from `arkade get`:
 
 ```bash
 cd to-inputs
 go run . -j schema.json -y inputs.yaml
 cp schema.json ../
 cat ../action.yml.tmpl | INPUTS=$(cat inputs.yaml) envsubst > ../action.yml
+npm run prepare
 
 ```
-npm run prepare
-```
+
