@@ -4154,6 +4154,8 @@ async function run() {
       }
     }
 
+    core.info("If you 💙 arkade, sponsor alexellis on GitHub https://github.com/sponsors/alexellis")
+
     core.setOutput('tools', added+ " tools were installed");
 
   } catch (error) {
