@@ -321,7 +321,6 @@ inputs:
     description: 'Install yq'
     required: false
 
-
 outputs:
   tools: # output will be available to future steps
     description: 'The number of tools installed'
