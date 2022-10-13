@@ -1,6 +1,9 @@
-# setup-arkade-v2
+# arkade-get
+## Get all the CLIs you need from arkade for a GitHub Action
 
-Install CLI tools using arkade:
+Install CLI tools using [arkade](https://arkade.dev):
+
+Specify either a version/tag, or "latest" to get the latest available.
 
 ```yaml
     - uses: alexellis/setup-arkade@v1
@@ -12,6 +15,24 @@ Install CLI tools using arkade:
       run: |
         $HOME/.arkade/bin/faas-cli version
 ```
+
+Optionally, move the binaries to $PATH:
+
+```
+    - name: Install custom CLIs
+      run: |
+        sudo mv $HOME/.arkade/bin/* /usr/local/bin/
+```
+
+Why use `@master`?
+
+GitHub Actions does not yet support dynamic inputs, so the inputs are generated from the `arkade get -o list` command.
+
+See how: [to-inputs/main.go](https://github.com/alexellis/arkade-get/blob/master/to-inputs/main.go)
+
+How often is the list of inputs updated?
+
+A nightly job runs via Cron to update the action: [.github/workflows/update-tools.yml](https://github.com/alexellis/arkade-get/blob/master/.github/workflows/update-tools.yml)
 
 # Development
 
