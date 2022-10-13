@@ -4127,6 +4127,7 @@ async function run() {
 
     for(i = 0; i < schema.length; i++){
       let tool = schema[i].name
+      tool = tool.replace(/_/g, "-")
       let toolValue = core.getInput(tool);
 
       if(toolValue) {
