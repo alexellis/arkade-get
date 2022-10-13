@@ -7,7 +7,7 @@ async function run() {
   try {
 
 
-    for(i = 0; i < len(schema); i++){
+    for(i = 0; i < schema.length; i++){
       let tool = schema[i].name
       let toolValue = core.getInput(tool);
 
@@ -20,7 +20,7 @@ async function run() {
 
     core.setOutput('tools', schema.length + " tools were installed");
 
-    
+
   } catch (error) {
     core.setFailed(error.message);
   }
