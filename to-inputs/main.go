@@ -56,7 +56,6 @@ func main() {
 		schema = append(schema, cli)
 
 		fmt.Fprintf(yFile, `  %s:
-    audience:  
     description: 'Install %s'
     required: false
 `, cli, cli)

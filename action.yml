@@ -2,427 +2,321 @@ name: 'Install arkade CLIs'
 description: 'Install arkade CLIs using inputs to the action'
 inputs:
   argocd:
-    audience:  
     description: 'Install argocd'
     required: false
   argocd-autopilot:
-    audience:  
     description: 'Install argocd-autopilot'
     required: false
   arkade:
-    audience:  
     description: 'Install arkade'
     required: false
   autok3s:
-    audience:  
     description: 'Install autok3s'
     required: false
   buildx:
-    audience:  
     description: 'Install buildx'
     required: false
   bun:
-    audience:  
     description: 'Install bun'
     required: false
   butane:
-    audience:  
     description: 'Install butane'
     required: false
   caddy:
-    audience:  
     description: 'Install caddy'
     required: false
   cilium:
-    audience:  
     description: 'Install cilium'
     required: false
   civo:
-    audience:  
     description: 'Install civo'
     required: false
   clusterctl:
-    audience:  
     description: 'Install clusterctl'
     required: false
   cosign:
-    audience:  
     description: 'Install cosign'
     required: false
   cr:
-    audience:  
     description: 'Install cr'
     required: false
   dagger:
-    audience:  
     description: 'Install dagger'
     required: false
   devspace:
-    audience:  
     description: 'Install devspace'
     required: false
   dive:
-    audience:  
     description: 'Install dive'
     required: false
   docker-compose:
-    audience:  
     description: 'Install docker-compose'
     required: false
   doctl:
-    audience:  
     description: 'Install doctl'
     required: false
   eksctl:
-    audience:  
     description: 'Install eksctl'
     required: false
   faas-cli:
-    audience:  
     description: 'Install faas-cli'
     required: false
   flux:
-    audience:  
     description: 'Install flux'
     required: false
   flyctl:
-    audience:  
     description: 'Install flyctl'
     required: false
   fzf:
-    audience:  
     description: 'Install fzf'
     required: false
   gh:
-    audience:  
     description: 'Install gh'
     required: false
   golangci-lint:
-    audience:  
     description: 'Install golangci-lint'
     required: false
   gomplate:
-    audience:  
     description: 'Install gomplate'
     required: false
   goreleaser:
-    audience:  
     description: 'Install goreleaser'
     required: false
   hadolint:
-    audience:  
     description: 'Install hadolint'
     required: false
   helm:
-    audience:  
     description: 'Install helm'
     required: false
   helmfile:
-    audience:  
     description: 'Install helmfile'
     required: false
   hey:
-    audience:  
     description: 'Install hey'
     required: false
   hostctl:
-    audience:  
     description: 'Install hostctl'
     required: false
   hubble:
-    audience:  
     description: 'Install hubble'
     required: false
   hugo:
-    audience:  
     description: 'Install hugo'
     required: false
   influx:
-    audience:  
     description: 'Install influx'
     required: false
   inlets-pro:
-    audience:  
     description: 'Install inlets-pro'
     required: false
   inletsctl:
-    audience:  
     description: 'Install inletsctl'
     required: false
   istioctl:
-    audience:  
     description: 'Install istioctl'
     required: false
   jq:
-    audience:  
     description: 'Install jq'
     required: false
   just:
-    audience:  
     description: 'Install just'
     required: false
   k0s:
-    audience:  
     description: 'Install k0s'
     required: false
   k0sctl:
-    audience:  
     description: 'Install k0sctl'
     required: false
   k10multicluster:
-    audience:  
     description: 'Install k10multicluster'
     required: false
   k10tools:
-    audience:  
     description: 'Install k10tools'
     required: false
   k3d:
-    audience:  
     description: 'Install k3d'
     required: false
   k3s:
-    audience:  
     description: 'Install k3s'
     required: false
   k3sup:
-    audience:  
     description: 'Install k3sup'
     required: false
   k9s:
-    audience:  
     description: 'Install k9s'
     required: false
   kail:
-    audience:  
     description: 'Install kail'
     required: false
   kanctl:
-    audience:  
     description: 'Install kanctl'
     required: false
   kgctl:
-    audience:  
     description: 'Install kgctl'
     required: false
   kim:
-    audience:  
     description: 'Install kim'
     required: false
   kind:
-    audience:  
     description: 'Install kind'
     required: false
   kops:
-    audience:  
     description: 'Install kops'
     required: false
   krew:
-    audience:  
     description: 'Install krew'
     required: false
   kube-bench:
-    audience:  
     description: 'Install kube-bench'
     required: false
   kubebuilder:
-    audience:  
     description: 'Install kubebuilder'
     required: false
   kubecm:
-    audience:  
     description: 'Install kubecm'
     required: false
   kubectl:
-    audience:  
     description: 'Install kubectl'
     required: false
   kubectx:
-    audience:  
     description: 'Install kubectx'
     required: false
   kubens:
-    audience:  
     description: 'Install kubens'
     required: false
   kubescape:
-    audience:  
     description: 'Install kubescape'
     required: false
   kubeseal:
-    audience:  
     description: 'Install kubeseal'
     required: false
   kubestr:
-    audience:  
     description: 'Install kubestr'
     required: false
   kubetail:
-    audience:  
     description: 'Install kubetail'
     required: false
   kumactl:
-    audience:  
     description: 'Install kumactl'
     required: false
   kustomize:
-    audience:  
     description: 'Install kustomize'
     required: false
   lazygit:
-    audience:  
     description: 'Install lazygit'
     required: false
   linkerd2:
-    audience:  
     description: 'Install linkerd2'
     required: false
   mc:
-    audience:  
     description: 'Install mc'
     required: false
   metal:
-    audience:  
     description: 'Install metal'
     required: false
   minikube:
-    audience:  
     description: 'Install minikube'
     required: false
   mixctl:
-    audience:  
     description: 'Install mixctl'
     required: false
   mkcert:
-    audience:  
     description: 'Install mkcert'
     required: false
   nats:
-    audience:  
     description: 'Install nats'
     required: false
   nats-server:
-    audience:  
     description: 'Install nats-server'
     required: false
   nerdctl:
-    audience:  
     description: 'Install nerdctl'
     required: false
   nova:
-    audience:  
     description: 'Install nova'
     required: false
   oh-my-posh:
-    audience:  
     description: 'Install oh-my-posh'
     required: false
   opa:
-    audience:  
     description: 'Install opa'
     required: false
   operator-sdk:
-    audience:  
     description: 'Install operator-sdk'
     required: false
   osm:
-    audience:  
     description: 'Install osm'
     required: false
   pack:
-    audience:  
     description: 'Install pack'
     required: false
   packer:
-    audience:  
     description: 'Install packer'
     required: false
   polaris:
-    audience:  
     description: 'Install polaris'
     required: false
   popeye:
-    audience:  
     description: 'Install popeye'
     required: false
   porter:
-    audience:  
     description: 'Install porter'
     required: false
   promtool:
-    audience:  
     description: 'Install promtool'
     required: false
   rekor-cli:
-    audience:  
     description: 'Install rekor-cli'
     required: false
   rpk:
-    audience:  
     description: 'Install rpk'
     required: false
   run-job:
-    audience:  
     description: 'Install run-job'
     required: false
   sops:
-    audience:  
     description: 'Install sops'
     required: false
   stern:
-    audience:  
     description: 'Install stern'
     required: false
   talosctl:
-    audience:  
     description: 'Install talosctl'
     required: false
   terraform:
-    audience:  
     description: 'Install terraform'
     required: false
   terragrunt:
-    audience:  
     description: 'Install terragrunt'
     required: false
   terrascan:
-    audience:  
     description: 'Install terrascan'
     required: false
   tfsec:
-    audience:  
     description: 'Install tfsec'
     required: false
   tilt:
-    audience:  
     description: 'Install tilt'
     required: false
   tkn:
-    audience:  
     description: 'Install tkn'
     required: false
   trivy:
-    audience:  
     description: 'Install trivy'
     required: false
   vagrant:
-    audience:  
     description: 'Install vagrant'
     required: false
   vault:
-    audience:  
     description: 'Install vault'
     required: false
   vcluster:
-    audience:  
     description: 'Install vcluster'
     required: false
   waypoint:
-    audience:  
     description: 'Install waypoint'
     required: false
   yq:
-    audience:  
     description: 'Install yq'
     required: false
 
