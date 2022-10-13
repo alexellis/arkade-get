@@ -1,4 +1,4 @@
-name: "units-test"
+name: "e2e-test"
 on:
   pull_request:
   push:
@@ -7,8 +7,7 @@ on:
       - 'releases/*'
 
 jobs:
-  # unit tests
-  units:
+  npm-ci:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
