@@ -1,18 +1,27 @@
 const core = require('@actions/core');
 const wait = require('./wait');
 
+const schema = require("./schema.json")
+const exec = require('@actions/exec');
 
 // most @actions toolkit packages have async methods
 async function run() {
   try {
-    const ms = core.getInput('milliseconds');
-    core.info(`Waiting ${ms} milliseconds ...`);
 
-    core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-    await wait(parseInt(ms));
-    core.info((new Date()).toTimeString());
 
-    core.setOutput('time', new Date().toTimeString());
+    for(i = 0; i < len(schema); i++){
+      let tool = schema[i].name
+      let toolValue = core.getInput(tool);
+
+      if(toolValue) {
+        core.info("Installing: " + tool + " with " + toolValue)
+
+        await exec.exec('arkade get ' + tool + ' --version ' + toolValue)
+      }
+    }
+
+    core.setOutput('tools', len(schema) + " tools were installed");
+
   } catch (error) {
     core.setFailed(error.message);
   }

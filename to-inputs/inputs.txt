@@ -1,5 +1,3 @@
-name: 'Install arkade CLIs'
-description: 'Install arkade CLIs using inputs to the action'
 inputs:
   argocd:
     audience:  
@@ -425,10 +423,3 @@ inputs:
     audience:  
     description: 'Install yq'
     required: false
-
-outputs:
-  tools: # output will be available to future steps
-    description: 'The number of tools installed'
-runs:
-  using: 'node16'
-  main: 'dist/index.js'

@@ -2705,6 +2705,22 @@ module.exports = wait;
 
 /***/ }),
 
+/***/ 290:
+/***/ ((module) => {
+
+module.exports = eval("require")("@actions/exec");
+
+
+/***/ }),
+
+/***/ 505:
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('["argocd","argocd-autopilot","arkade","autok3s","buildx","bun","butane","caddy","cilium","civo","clusterctl","cosign","cr","dagger","devspace","dive","docker-compose","doctl","eksctl","faas-cli","flux","flyctl","fzf","gh","golangci-lint","gomplate","goreleaser","hadolint","helm","helmfile","hey","hostctl","hubble","hugo","influx","inlets-pro","inletsctl","istioctl","jq","just","k0s","k0sctl","k10multicluster","k10tools","k3d","k3s","k3sup","k9s","kail","kanctl","kgctl","kim","kind","kops","krew","kube-bench","kubebuilder","kubecm","kubectl","kubectx","kubens","kubescape","kubeseal","kubestr","kubetail","kumactl","kustomize","lazygit","linkerd2","mc","metal","minikube","mixctl","mkcert","nats","nats-server","nerdctl","nova","oh-my-posh","opa","operator-sdk","osm","pack","packer","polaris","popeye","porter","promtool","rekor-cli","rpk","run-job","sops","stern","talosctl","terraform","terragrunt","terrascan","tfsec","tilt","tkn","trivy","vagrant","vault","vcluster","waypoint","yq"]');
+
+/***/ }),
+
 /***/ 357:
 /***/ ((module) => {
 
@@ -2837,18 +2853,27 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(186);
 const wait = __nccwpck_require__(258);
 
+const schema = __nccwpck_require__(505)
+const exec = __nccwpck_require__(290);
 
 // most @actions toolkit packages have async methods
 async function run() {
   try {
-    const ms = core.getInput('milliseconds');
-    core.info(`Waiting ${ms} milliseconds ...`);
 
-    core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-    await wait(parseInt(ms));
-    core.info((new Date()).toTimeString());
 
-    core.setOutput('time', new Date().toTimeString());
+    for(i = 0; i < len(schema); i++){
+      let tool = schema[i].name
+      let toolValue = core.getInput(tool);
+
+      if(toolValue) {
+        core.info("Installing: " + tool + " with " + toolValue)
+
+        await exec.exec('arkade get ' + tool + ' --version ' + toolValue)
+      }
+    }
+
+    core.setOutput('tools', len(schema) + " tools were installed");
+
   } catch (error) {
     core.setFailed(error.message);
   }

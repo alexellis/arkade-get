@@ -22,4 +22,6 @@ jobs:
     - uses: actions/checkout@v3
     - uses: ./
       with:
-        milliseconds: 1000
+        kubectl: latest
+        faas-cli: 0.14.10
+
