@@ -27,6 +27,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@master
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: 16.x
+      - name: Install with npm
+        run: |
+          npm install
       - uses: alexellis/setup-arkade@v1
       - name: Install Go
         uses: actions/setup-go@v3
