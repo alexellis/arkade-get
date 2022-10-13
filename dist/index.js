@@ -4136,7 +4136,12 @@ async function run() {
       if(toolValue && toolValue.length) {
         core.info("Installing: " + tool + " with " + toolValue)
 
-        await exec.exec('arkade get ' + tool + ' --version ' + toolValue)
+        if(toolValue == "latest") {
+          await exec.exec('arkade get ' + tool)
+        } else {
+          await exec.exec('arkade get ' + tool + ' --version ' + toolValue)
+        }
+
         added++
       }
     }
