@@ -37,11 +37,17 @@ inputs:
   clusterctl:
     description: 'Install clusterctl'
     required: false
+  conftest:
+    description: 'Install conftest'
+    required: false
   cosign:
     description: 'Install cosign'
     required: false
   cr:
     description: 'Install cr'
+    required: false
+  crane:
+    description: 'Install crane'
     required: false
   dagger:
     description: 'Install dagger'
@@ -178,6 +184,9 @@ inputs:
   kubecm:
     description: 'Install kubecm'
     required: false
+  kubeconform:
+    description: 'Install kubeconform'
+    required: false
   kubectl:
     description: 'Install kubectl'
     required: false
@@ -198,6 +207,9 @@ inputs:
     required: false
   kubetail:
     description: 'Install kubetail'
+    required: false
+  kubeval:
+    description: 'Install kubeval'
     required: false
   kumactl:
     description: 'Install kumactl'
