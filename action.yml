@@ -298,6 +298,9 @@ inputs:
   talosctl:
     description: 'Install talosctl'
     required: false
+  tctl:
+    description: 'Install tctl'
+    required: false
   terraform:
     description: 'Install terraform'
     required: false
@@ -327,6 +330,9 @@ inputs:
     required: false
   vcluster:
     description: 'Install vcluster'
+    required: false
+  viddy:
+    description: 'Install viddy'
     required: false
   waypoint:
     description: 'Install waypoint'
