@@ -70,6 +70,9 @@ inputs:
   faas-cli:
     description: 'Install faas-cli'
     required: false
+  firectl:
+    description: 'Install firectl'
+    required: false
   flux:
     description: 'Install flux'
     required: false
