@@ -6,7 +6,7 @@ Install CLI tools using [arkade](https://arkade.dev):
 Specify either a version/tag, or "latest" to get the latest available.
 
 ```yaml
-    - uses: alexellis/setup-arkade@v1
+    - uses: alexellis/setup-arkade@v2
     - uses: alexellis/arkade-get@master
       with:
         kubectl: latest
