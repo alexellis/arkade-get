@@ -89,6 +89,9 @@ inputs:
   goreleaser:
     description: 'Install goreleaser'
     required: false
+  grafana-agent:
+    description: 'Install grafana-agent'
+    required: false
   hadolint:
     description: 'Install hadolint'
     required: false
