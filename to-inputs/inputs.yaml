@@ -290,6 +290,9 @@ inputs:
   run-job:
     description: 'Install run-job'
     required: false
+  scaleway-cli:
+    description: 'Install scaleway-cli'
+    required: false
   sops:
     description: 'Install sops'
     required: false
