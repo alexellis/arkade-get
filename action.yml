@@ -97,6 +97,9 @@ inputs:
   grafana-agent:
     description: 'Install grafana-agent'
     required: false
+  grype:
+    description: 'Install grype'
+    required: false
   hadolint:
     description: 'Install hadolint'
     required: false
@@ -303,6 +306,9 @@ inputs:
     required: false
   stern:
     description: 'Install stern'
+    required: false
+  syft:
+    description: 'Install syft'
     required: false
   talosctl:
     description: 'Install talosctl'
