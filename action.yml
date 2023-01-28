@@ -34,6 +34,9 @@ inputs:
   civo:
     description: 'Install civo'
     required: false
+  clusterawsadm:
+    description: 'Install clusterawsadm'
+    required: false
   clusterctl:
     description: 'Install clusterctl'
     required: false
@@ -66,6 +69,9 @@ inputs:
     required: false
   eksctl:
     description: 'Install eksctl'
+    required: false
+  eksctl-anywhere:
+    description: 'Install eksctl-anywhere'
     required: false
   faas-cli:
     description: 'Install faas-cli'
