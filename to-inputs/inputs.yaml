@@ -47,6 +47,9 @@ inputs:
   crane:
     description: 'Install crane'
     required: false
+  croc:
+    description: 'Install croc'
+    required: false
   dagger:
     description: 'Install dagger'
     required: false
