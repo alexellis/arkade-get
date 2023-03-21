@@ -4,6 +4,9 @@ description: 'Install arkade CLIs using inputs to the action'
 # The section below is generated using a cron schedule that runs once per day
 
 inputs:
+  actuated-cli:
+    description: 'Install actuated-cli'
+    required: false
   argocd:
     description: 'Install argocd'
     required: false
@@ -207,6 +210,9 @@ inputs:
     required: false
   kubectl:
     description: 'Install kubectl'
+    required: false
+  kubectl-cnpg:
+    description: 'Install kubectl-cnpg'
     required: false
   kubectx:
     description: 'Install kubectx'
