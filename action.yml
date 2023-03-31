@@ -4,6 +4,9 @@ description: 'Install arkade CLIs using inputs to the action'
 # The section below is generated using a cron schedule that runs once per day
 
 inputs:
+  actions-usage:
+    description: 'Install actions-usage'
+    required: false
   actuated-cli:
     description: 'Install actuated-cli'
     required: false
@@ -42,6 +45,9 @@ inputs:
     required: false
   clusterctl:
     description: 'Install clusterctl'
+    required: false
+  cmctl:
+    description: 'Install cmctl'
     required: false
   conftest:
     description: 'Install conftest'
@@ -90,6 +96,9 @@ inputs:
     required: false
   flyctl:
     description: 'Install flyctl'
+    required: false
+  fstail:
+    description: 'Install fstail'
     required: false
   fzf:
     description: 'Install fzf'
@@ -210,9 +219,6 @@ inputs:
     required: false
   kubectl:
     description: 'Install kubectl'
-    required: false
-  kubectl-cnpg:
-    description: 'Install kubectl-cnpg'
     required: false
   kubectx:
     description: 'Install kubectx'
