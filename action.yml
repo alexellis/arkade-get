@@ -376,6 +376,9 @@ inputs:
   yq:
     description: 'Install yq'
     required: false
+  yt-dlp:
+    description: 'Install yt-dlp'
+    required: false
 
 outputs:
   tools: # output will be available to future steps
