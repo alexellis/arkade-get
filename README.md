@@ -65,6 +65,7 @@ cp schema.json ../
 cat ../action.yml.tmpl | INPUTS=$(cat inputs.yaml) envsubst > ../action.yml
 npm run prepare
 cd ../
-
 ```
+
+Note that the above is regenerated and committed back to the repository once per day at midnight.
 
