@@ -48,12 +48,23 @@ npm run prepare
 
 ## Regenerate the list of tools from `arkade get`:
 
+Make sure you have the pre-reqs:
+
+```bash
+npm i -g @vercel/ncc
+
+# envsubst is also required
+```
+
+Then:
+
 ```bash
 cd to-inputs
 go run . -j schema.json -y inputs.yaml
 cp schema.json ../
 cat ../action.yml.tmpl | INPUTS=$(cat inputs.yaml) envsubst > ../action.yml
 npm run prepare
+cd ../
 
 ```
 
