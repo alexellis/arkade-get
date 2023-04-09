@@ -347,6 +347,9 @@ inputs:
   tilt:
     description: 'Install tilt'
     required: false
+  timoni:
+    description: 'Install timoni'
+    required: false
   tkn:
     description: 'Install tkn'
     required: false
