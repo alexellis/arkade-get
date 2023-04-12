@@ -317,6 +317,9 @@ inputs:
   scaleway-cli:
     description: 'Install scaleway-cli'
     required: false
+  seaweedfs:
+    description: 'Install seaweedfs'
+    required: false
   sops:
     description: 'Install sops'
     required: false
