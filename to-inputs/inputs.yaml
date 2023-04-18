@@ -242,6 +242,9 @@ inputs:
   kustomize:
     description: 'Install kustomize'
     required: false
+  kyverno:
+    description: 'Install kyverno'
+    required: false
   lazygit:
     description: 'Install lazygit'
     required: false
