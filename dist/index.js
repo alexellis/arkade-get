@@ -14410,12 +14410,13 @@ const axios = __nccwpck_require__(8757)
 
 
 function getDownloadArch(arch) {
-  if (arch === 'x64') {
-    return ''
-  } else if (arch === 'arm') {
+  if (arch === 'arm64') {
     return '-arm64'
   }
+  
+  return ''
 }
+
 async function getDownloadUrl() {
   let tag = "latest"
   let response = null
