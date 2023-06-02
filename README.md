@@ -29,6 +29,19 @@ Optionally, if you wish (this is not necessary), you can move the binaries to `/
         sudo mv $HOME/.arkade/bin/* /usr/local/bin/
 ```
 
+## Turn off job summaries
+
+Job summaries provide an overview of which tools you're depending on for CI.
+
+If you are going to turn this notice off, then please [sponsor arkade](https://github.com/sponsors/alexellis)
+
+```yaml
+    - uses: alexellis/arkade-get@master
+      with:
+        print-summaries: false
+        inlets-pro: latest
+```
+
 ## Why do we use use `@master`?
 
 GitHub Actions does not yet support dynamic inputs, so the inputs are generated from the `arkade get -o list` command.
