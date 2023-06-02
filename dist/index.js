@@ -14503,32 +14503,24 @@ async function run() {
       }
     }
 
-  await core.summary
-  .addHeading('Test Results')
+    let rows = [ ]
 
-  .addTable([
-    [{data: 'File', header: true}, {data: 'Result', header: true}],
-    ['foo.js', 'Pass ✅'],
-    ['bar.js', 'Fail ❌'],
-    ['test.js', 'Pass ✅']
-  ])
-  .addLink('View staging deployment!', 'https://github.com')
-  .write()
-
-    // let rows = [ ]
-
-    // rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
+    rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
     core.info("Tools: " + JSON.stringify(tools))
 
-    // for(let tool in Object.keys(tools)) {
-    //   rows.push([tool, tools[tool]])
-    // }  
+    let keys = Object.keys(tools)
+    for(let i in keys) {
+      rows.push([
+        keys[i],
+        tools[keys[i]]
+      ])
+    }  
     
-    // await core.summary
-    // .addHeading('Arkade installation')
-    // .addTable(rows)
-    // .addLink('Sponsor arkade 💙!', 'https://github.com/sponsors/alexellis')
-    // .write()
+    await core.summary
+    .addHeading('Arkade installation')
+    .addTable(rows)
+    .addLink('Sponsor arkade 💙!', 'https://github.com/sponsors/alexellis')
+    .write()
 
     core.info("If you 💙 arkade, sponsor alexellis on GitHub https://github.com/sponsors/alexellis")
 
