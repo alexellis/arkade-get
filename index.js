@@ -105,7 +105,8 @@ async function run() {
     }
 
     let printSummary = core.getInput("print-summary")
-    if(printSummary == true) {
+    core.info("Print summary: " + printSummary)
+    if(printSummary == true || printSummary == "true") {
       let rows = [ ]
 
       rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
