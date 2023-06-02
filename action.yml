@@ -7,7 +7,7 @@ inputs:
 
   print-summary:
     description: 'Print a summary of tools installed by arkade'
-	default: true
+    default: true
     required: false
   actions-usage:
     description: 'Install actions-usage'
