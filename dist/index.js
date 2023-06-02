@@ -14503,8 +14503,8 @@ async function run() {
       }
     }
 
-    let printSummaries = core.getInput("print-summaries")
-    if(printSummaries == "true") {
+    let printSummary = core.getInput("print-summary")
+    if(printSummary == true) {
       let rows = [ ]
 
       rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
@@ -14521,7 +14521,7 @@ async function run() {
       await core.summary
       .addHeading('Arkade installation')
       .addTable(rows)
-      .addLink('Sponsor arkade 💙!', 'https://github.com/sponsors/alexellis')
+      .addLink('Sponsor arkade via GitHub 💙!', 'https://github.com/sponsors/alexellis')
       .write()
     }
 
