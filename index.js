@@ -123,7 +123,7 @@ async function run() {
       await core.summary
       .addHeading('Arkade installation')
       .addTable(rows)
-      .addLink('Sponsor arkade via GitHub 💙!', 'https://github.com/sponsors/alexellis')
+      .addLink('If you 💙 arkade, sponsor alexellis on GitHub!', 'https://github.com/sponsors/alexellis')
       .write()
     }
 
