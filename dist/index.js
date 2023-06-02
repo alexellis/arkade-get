@@ -14483,6 +14483,7 @@ async function run() {
 
     let added = 0
     let tools = {}
+    let toolTimes = {}
 
     for(let i = 0; i < schema.length; i++){
       let tool = schema[i]
@@ -14501,7 +14502,10 @@ async function run() {
         }
 
         core.debug(`Running: ${cmd}`)
+        let startTime = new Date().getTime()
+
         await exec.exec(cmd)
+        toolTimes[tool] = new Date().getTime() - startTime
 
         added++
       }
@@ -14510,7 +14514,7 @@ async function run() {
     if(core.getInput("print-summary") == "true") {
       let rows = [ ]
 
-      rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
+      rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}, {data: "Download time", header: true}])
 
       let keys = Object.keys(tools)
       keys = keys.sort()
@@ -14518,7 +14522,8 @@ async function run() {
       for(let i in keys) {
         rows.push([
           keys[i],
-          tools[keys[i]]
+          tools[keys[i]],
+          (toolTimes[keys[i]]/1000).toFixed(2) + "s"
         ])
       }  
       
