@@ -14479,6 +14479,8 @@ async function run() {
     core.addPath(arkadePath)
 
     let added = 0
+    let tools = {}
+
     for(let i = 0; i < schema.length; i++){
       let tool = schema[i]
       // inputName = tool.replace(/-/g, "_")
@@ -14487,6 +14489,7 @@ async function run() {
 
       if(toolValue && toolValue.length) {
         core.info("Installing: " + tool + " with " + toolValue)
+        tools[tool] = toolValue
 
         let cmd = `arkade get --progress=false --quiet=true ${tool}`
 
@@ -14499,6 +14502,18 @@ async function run() {
         added++
       }
     }
+
+    let rows =[ [{data: 'Tool', header: true}, {data: 'Version', header: true}] ]
+    
+    for(let tool in Object.keys(tools)) {
+      rows.push([tool, tools[tool]])
+    }  
+    
+    await core.summary
+    .addHeading('Arkade installation')
+    .addTable(rows)
+    .addLink('Sponsor arkade 💙!', 'https://github.com/sponsors/alexellis')
+    .write()
 
     core.info("If you 💙 arkade, sponsor alexellis on GitHub https://github.com/sponsors/alexellis")
 
