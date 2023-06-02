@@ -75,7 +75,7 @@ async function run() {
 
       // Use arkade to download the various tools
       const homedir = os.homedir()  
-      const arkadePath = path.join(homedir, "/.arkade/bin/")
+      const arkadePath = path.join(homedir, "/.arkade/bin")
 
       core.info("Setting arkade's folder to: " + arkadePath)
       // Add arkade's path to the PATH environment variable
@@ -102,15 +102,13 @@ async function run() {
         }
 
         core.debug(`Running: ${cmd}`)
-        await exec.exec(commandLine= cmd)
+        await exec.exec(cmd)
 
         added++
       }
     }
 
-    let printSummary = core.getInput("print-summary")
-
-    if(printSummary == true || printSummary == "true") {
+    if(core.getInput("print-summary") == "true") {
       let rows = [ ]
 
       rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
