@@ -52,7 +52,7 @@ func main() {
 
   print-summary:
     description: 'Print a summary of tools installed by arkade'
-	default: true
+    default: true
     required: false
 `)
 	lines := strings.Split(strings.TrimSpace(res.Stdout), "\n")
