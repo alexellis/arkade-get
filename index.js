@@ -104,24 +104,27 @@ async function run() {
       }
     }
 
-    let rows = [ ]
+    let printSummaries = core.getInput("print-summaries")
+    if(printSummaries == "true") {
+      let rows = [ ]
 
-    rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
-    core.info("Tools: " + JSON.stringify(tools))
+      rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
+      core.info("Tools: " + JSON.stringify(tools))
 
-    let keys = Object.keys(tools)
-    for(let i in keys) {
-      rows.push([
-        keys[i],
-        tools[keys[i]]
-      ])
-    }  
-    
-    await core.summary
-    .addHeading('Arkade installation')
-    .addTable(rows)
-    .addLink('Sponsor arkade 💙!', 'https://github.com/sponsors/alexellis')
-    .write()
+      let keys = Object.keys(tools)
+      for(let i in keys) {
+        rows.push([
+          keys[i],
+          tools[keys[i]]
+        ])
+      }  
+      
+      await core.summary
+      .addHeading('Arkade installation')
+      .addTable(rows)
+      .addLink('Sponsor arkade 💙!', 'https://github.com/sponsors/alexellis')
+      .write()
+    }
 
     core.info("If you 💙 arkade, sponsor alexellis on GitHub https://github.com/sponsors/alexellis")
 
