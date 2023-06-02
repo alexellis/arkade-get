@@ -14483,12 +14483,12 @@ async function run() {
 
     for(let i = 0; i < schema.length; i++){
       let tool = schema[i]
-      // inputName = tool.replace(/-/g, "_")
+
       let inputName = tool;
       let toolValue = core.getInput(inputName);
 
       if(toolValue && toolValue.length) {
-        core.info("Installing: " + tool + " with " + toolValue)
+        core.info(`Installing: ${tool} with ${toolValue}`)
         tools[tool] = toolValue
 
         let cmd = `arkade get --progress=false --quiet=true ${tool}`
@@ -14496,7 +14496,8 @@ async function run() {
         if(toolValue != "latest") {
           cmd += ` --version ${toolValue}`
         }
-        core.info(`Running: ${cmd}`)
+
+        core.debug(`Running: ${cmd}`)
         await exec.exec(commandLine= cmd)
 
         added++
@@ -14504,7 +14505,7 @@ async function run() {
     }
 
     let printSummary = core.getInput("print-summary")
-    core.info("Print summary: " + printSummary)
+
     if(printSummary == true || printSummary == "true") {
       let rows = [ ]
 
@@ -14519,8 +14520,13 @@ async function run() {
         ])
       }  
       
+      let addedStr = "tool"
+      if(added > 1) {
+        addedStr += "s"
+      }
+
       await core.summary
-      .addHeading('Arkade installation')
+      .addHeading(`Arkade installed ${added} ${addedStr}`)
       .addTable(rows)
       .addLink('If you 💙 arkade, sponsor alexellis on GitHub!', 'https://github.com/sponsors/alexellis')
       .write()
