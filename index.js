@@ -114,6 +114,8 @@ async function run() {
       rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
 
       let keys = Object.keys(tools)
+      keys = keys.sort()
+
       for(let i in keys) {
         rows.push([
           keys[i],
