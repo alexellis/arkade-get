@@ -4,6 +4,11 @@ description: 'Install arkade CLIs using inputs to the action'
 # The section below is generated using a cron schedule that runs once per day
 
 inputs:
+
+  print-summary:
+    description: 'Print a summary of tools installed by arkade'
+	default: true
+    required: false
   actions-usage:
     description: 'Install actions-usage'
     required: false
