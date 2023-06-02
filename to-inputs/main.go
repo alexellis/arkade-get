@@ -50,6 +50,11 @@ func main() {
 	schema := []string{}
 	fmt.Fprintf(yFile, `inputs:
 
+  install-arkade:
+    description: 'Install the arkade binary'
+    default: true
+    required: false
+
   print-summary:
     description: 'Print a summary of tools installed by arkade'
     default: true

@@ -14449,35 +14449,37 @@ async function getDownloadUrl() {
 async function run() {
   try {
 
-    core.info("Installing arkade into tool cache")
-    let arkadeBinaryUrl = await getDownloadUrl()
+    if(core.getInput("install-arkade") == "true") {
+      core.info("Installing arkade into tool cache")
+      let arkadeBinaryUrl = await getDownloadUrl()
 
-    core.info(`Download URL: ${arkadeBinaryUrl}`)
-    
-    // Download arkade
-    const pathToDownload = await toolCache.downloadTool(arkadeBinaryUrl)
-    core.info("Downloaded arkade to: " + pathToDownload)
+      core.info(`Download URL: ${arkadeBinaryUrl}`)
+      
+      // Download arkade
+      const pathToDownload = await toolCache.downloadTool(arkadeBinaryUrl)
+      core.info("Downloaded arkade to: " + pathToDownload)
 
-    const cachePath = path.dirname(pathToDownload)
+      const cachePath = path.dirname(pathToDownload)
 
-    const arkadeFinalPath = path.join(cachePath, "arkade")
+      const arkadeFinalPath = path.join(cachePath, "arkade")
 
-    core.info(`Moving arkade from ${pathToDownload} to ${arkadeFinalPath}`)
-    await io.mv(pathToDownload, arkadeFinalPath)
+      core.info(`Moving arkade from ${pathToDownload} to ${arkadeFinalPath}`)
+      await io.mv(pathToDownload, arkadeFinalPath)
 
-    fs.chmodSync(arkadeFinalPath, 0o755)
+      fs.chmodSync(arkadeFinalPath, 0o755)
 
-    core.addPath(cachePath)
+      core.addPath(cachePath)
 
-    core.info(`Final path: ${arkadeFinalPath}`)
+      core.info(`Final path: ${arkadeFinalPath}`)
 
-    // Use arkade to download the various tools
-    const homedir = os.homedir()  
-    const arkadePath = path.join(homedir, "/.arkade/bin/")
+      // Use arkade to download the various tools
+      const homedir = os.homedir()  
+      const arkadePath = path.join(homedir, "/.arkade/bin/")
 
-    core.info("Setting arkade's folder to: " + arkadePath)
-    // Add arkade's path to the PATH environment variable
-    core.addPath(arkadePath)
+      core.info("Setting arkade's folder to: " + arkadePath)
+      // Add arkade's path to the PATH environment variable
+      core.addPath(arkadePath)
+    }
 
     let added = 0
     let tools = {}
@@ -14511,7 +14513,6 @@ async function run() {
       let rows = [ ]
 
       rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
-      core.info("Tools: " + JSON.stringify(tools))
 
       let keys = Object.keys(tools)
       for(let i in keys) {
