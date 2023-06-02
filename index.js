@@ -13,10 +13,11 @@ const axios = require('axios')
 function getDownloadArch(arch) {
   if (arch === 'x64') {
     return ''
-  } else if (arch === 'arm') {
+  } else if (arch === 'arm64') {
     return '-arm64'
   }
 }
+
 async function getDownloadUrl() {
   let tag = "latest"
   let response = null
