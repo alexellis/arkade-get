@@ -14503,17 +14503,32 @@ async function run() {
       }
     }
 
-    let rows =[ [{data: 'Tool', header: true}, {data: 'Version', header: true}] ]
+  await core.summary
+  .addHeading('Test Results')
+
+  .addTable([
+    [{data: 'File', header: true}, {data: 'Result', header: true}],
+    ['foo.js', 'Pass ✅'],
+    ['bar.js', 'Fail ❌'],
+    ['test.js', 'Pass ✅']
+  ])
+  .addLink('View staging deployment!', 'https://github.com')
+  .write()
+
+    // let rows = [ ]
+
+    // rows.push([{data: 'Tool', header: true}, {data: 'Version', header: true}])
+    core.info("Tools: " + JSON.stringify(tools))
+
+    // for(let tool in Object.keys(tools)) {
+    //   rows.push([tool, tools[tool]])
+    // }  
     
-    for(let tool in Object.keys(tools)) {
-      rows.push([tool, tools[tool]])
-    }  
-    
-    await core.summary
-    .addHeading('Arkade installation')
-    .addTable(rows)
-    .addLink('Sponsor arkade 💙!', 'https://github.com/sponsors/alexellis')
-    .write()
+    // await core.summary
+    // .addHeading('Arkade installation')
+    // .addTable(rows)
+    // .addLink('Sponsor arkade 💙!', 'https://github.com/sponsors/alexellis')
+    // .write()
 
     core.info("If you 💙 arkade, sponsor alexellis on GitHub https://github.com/sponsors/alexellis")
 
