@@ -321,6 +321,9 @@ inputs:
   rekor-cli:
     description: 'Install rekor-cli'
     required: false
+  replicated:
+    description: 'Install replicated'
+    required: false
   rpk:
     description: 'Install rpk'
     required: false
