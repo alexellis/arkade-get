@@ -38,7 +38,7 @@ If you are going to turn this notice off, then please [sponsor arkade](https://g
 ```yaml
     - uses: alexellis/arkade-get@master
       with:
-        print-summaries: false
+        print-summary: false
         inlets-pro: latest
 ```
 
