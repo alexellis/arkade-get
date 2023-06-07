@@ -215,8 +215,14 @@ inputs:
   krew:
     description: 'Install krew'
     required: false
+  ktop:
+    description: 'Install ktop'
+    required: false
   kube-bench:
     description: 'Install kube-bench'
+    required: false
+  kube-burner:
+    description: 'Install kube-burner'
     required: false
   kubebuilder:
     description: 'Install kubebuilder'
@@ -293,11 +299,17 @@ inputs:
   nova:
     description: 'Install nova'
     required: false
+  oc:
+    description: 'Install oc'
+    required: false
   oh-my-posh:
     description: 'Install oh-my-posh'
     required: false
   opa:
     description: 'Install opa'
+    required: false
+  openshift-install:
+    description: 'Install openshift-install'
     required: false
   operator-sdk:
     description: 'Install operator-sdk'
