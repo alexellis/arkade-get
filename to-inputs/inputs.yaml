@@ -45,9 +45,6 @@ inputs:
   cilium:
     description: 'Install cilium'
     required: false
-  cilium:
-    description: 'Install cilium'
-    required: false
   civo:
     description: 'Install civo'
     required: false
