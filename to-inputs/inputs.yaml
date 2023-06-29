@@ -306,6 +306,9 @@ inputs:
   oh-my-posh:
     description: 'Install oh-my-posh'
     required: false
+  op:
+    description: 'Install op'
+    required: false
   opa:
     description: 'Install opa'
     required: false
@@ -365,6 +368,9 @@ inputs:
     required: false
   talosctl:
     description: 'Install talosctl'
+    required: false
+  task:
+    description: 'Install task'
     required: false
   tctl:
     description: 'Install tctl'
