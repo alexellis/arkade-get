@@ -101,6 +101,9 @@ inputs:
   eksctl-anywhere:
     description: 'Install eksctl-anywhere'
     required: false
+  etcd:
+    description: 'Install etcd'
+    required: false
   faas-cli:
     description: 'Install faas-cli'
     required: false
@@ -412,6 +415,9 @@ inputs:
     required: false
   vcluster:
     description: 'Install vcluster'
+    required: false
+  vhs:
+    description: 'Install vhs'
     required: false
   viddy:
     description: 'Install viddy'
