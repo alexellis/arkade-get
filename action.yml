@@ -365,6 +365,9 @@ inputs:
   seaweedfs:
     description: 'Install seaweedfs'
     required: false
+  skupper:
+    description: 'Install skupper'
+    required: false
   sops:
     description: 'Install sops'
     required: false
