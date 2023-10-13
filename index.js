@@ -9,41 +9,40 @@ const fs = require('fs')
 const path = require('path')
 const axios = require('axios')
 
-
-function getDownloadArch(arch) {
-  if (arch === 'arm64') {
-    return '-arm64'
+function getProxy() {
+  const httpProxy = process.env.http_proxy
+  const httpsProxy = process.env.https_proxy
+  if(httpProxy || httpsProxy) {
+    return {
+      proxy: new URL(httpProxy || httpsProxy)
+    }
   }
-  
-  return ''
+  return {}
 }
 
 async function getDownloadUrl() {
-  let tag = "latest"
-  let response = null
-  try {
-    response = await axios({
-      url: "https://github.com/alexellis/arkade/releases/latest",
-      maxRedirects: 0,
-      method: "head",
-      timeout: 2500,
-      validateStatus: function (status) {
-        return status == 302
-      }
-    })
-    tag = response.headers.location;
-  } catch (error) {
-      throw error
+  const response = await axios.get('https://api.github.com/repos/alexellis/arkade/releases/latest', {
+    method: "GET",
+    headers: {
+      accept: "application/vnd.github+json"
+    },
+    timeout: 2500,
+    validateStatus: function (status) {
+      return status === 200
+    },
+    ...getProxy()
+  })
+
+  // Find right asset for the environment
+  const jsonResponse = response.data
+  const assets = jsonResponse.assets
+  let foundAsset = assets.find(asset => asset.name.endsWith(os.arch()))
+  if(foundAsset) {
+    return foundAsset.browser_download_url
+  } else {
+    // Fallback when the OS Build isn't found
+    return assets.find(asset => asset.name === "arkade").browser_download_url
   }
-  // https://github.com/alexellis/arkade/releases/tag/0.9.17
-
-  //replace the first tag instance with "download"
-
-  tag = tag.replace("tag", "download")
-
-  let arch = getDownloadArch(os.arch())
-  core.info(`Arch: ${os.arch()}`)
-  return `${tag}/arkade${arch}`
 }
 
 // most @actions toolkit packages have async methods
