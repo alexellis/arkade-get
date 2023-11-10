@@ -233,6 +233,9 @@ inputs:
   kube-burner:
     description: 'Install kube-burner'
     required: false
+  kube-linter:
+    description: 'Install kube-linter'
+    required: false
   kubebuilder:
     description: 'Install kubebuilder'
     required: false
