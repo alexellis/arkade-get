@@ -275,6 +275,12 @@ inputs:
   kustomize:
     description: 'Install kustomize'
     required: false
+  kwok:
+    description: 'Install kwok'
+    required: false
+  kwokctl:
+    description: 'Install kwokctl'
+    required: false
   kyverno:
     description: 'Install kyverno'
     required: false
