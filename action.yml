@@ -377,6 +377,9 @@ inputs:
   skupper:
     description: 'Install skupper'
     required: false
+  snowmachine:
+    description: 'Install snowmachine'
+    required: false
   sops:
     description: 'Install sops'
     required: false
