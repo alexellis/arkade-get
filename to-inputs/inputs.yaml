@@ -42,11 +42,17 @@ inputs:
   caddy:
     description: 'Install caddy'
     required: false
+  ch-remote:
+    description: 'Install ch-remote'
+    required: false
   cilium:
     description: 'Install cilium'
     required: false
   civo:
     description: 'Install civo'
+    required: false
+  cloud-hypervisor:
+    description: 'Install cloud-hypervisor'
     required: false
   clusterawsadm:
     description: 'Install clusterawsadm'
