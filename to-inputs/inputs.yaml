@@ -135,6 +135,9 @@ inputs:
   goreleaser:
     description: 'Install goreleaser'
     required: false
+  gptscript:
+    description: 'Install gptscript'
+    required: false
   grafana-agent:
     description: 'Install grafana-agent'
     required: false
@@ -402,11 +405,17 @@ inputs:
   terraform:
     description: 'Install terraform'
     required: false
+  terraform-docs:
+    description: 'Install terraform-docs'
+    required: false
   terragrunt:
     description: 'Install terragrunt'
     required: false
   terrascan:
     description: 'Install terrascan'
+    required: false
+  tflint:
+    description: 'Install tflint'
     required: false
   tfsec:
     description: 'Install tfsec'
