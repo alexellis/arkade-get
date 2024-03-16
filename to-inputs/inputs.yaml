@@ -429,6 +429,9 @@ inputs:
   tkn:
     description: 'Install tkn'
     required: false
+  tofu:
+    description: 'Install tofu'
+    required: false
   trivy:
     description: 'Install trivy'
     required: false
