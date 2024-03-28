@@ -1,13 +1,14 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"flag"
 	"fmt"
 	"os"
 	"strings"
 
-	execute "github.com/alexellis/go-execute/pkg/v1"
+	execute "github.com/alexellis/go-execute/v2"
 )
 
 func main() {
@@ -25,13 +26,15 @@ func main() {
 		return
 	}
 
+	ctx := context.Background()
+
 	cmd := execute.ExecTask{
 		Command:     "arkade",
 		Args:        []string{"get", "-o", "list"},
 		StreamStdio: false,
 	}
 
-	res, err := cmd.Execute()
+	res, err := cmd.Execute(ctx)
 	if err != nil {
 		panic(err)
 	}

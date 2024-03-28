@@ -1,5 +1,5 @@
 module to-inputs
 
-go 1.18
+go 1.21
 
-require github.com/alexellis/go-execute v0.5.0
+require github.com/alexellis/go-execute/v2 v2.2.1
