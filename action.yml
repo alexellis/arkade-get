@@ -269,6 +269,9 @@ inputs:
   kubeseal:
     description: 'Install kubeseal'
     required: false
+  kubestr:
+    description: 'Install kubestr'
+    required: false
   kubetail:
     description: 'Install kubetail'
     required: false
