@@ -113,6 +113,9 @@ inputs:
   faas-cli:
     description: 'Install faas-cli'
     required: false
+  faasd:
+    description: 'Install faasd'
+    required: false
   firectl:
     description: 'Install firectl'
     required: false
@@ -364,6 +367,9 @@ inputs:
     required: false
   promtool:
     description: 'Install promtool'
+    required: false
+  regctl:
+    description: 'Install regctl'
     required: false
   rekor-cli:
     description: 'Install rekor-cli'
