@@ -248,6 +248,9 @@ inputs:
   kube-linter:
     description: 'Install kube-linter'
     required: false
+  kube-score:
+    description: 'Install kube-score'
+    required: false
   kubebuilder:
     description: 'Install kubebuilder'
     required: false
