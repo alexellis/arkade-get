@@ -71,6 +71,9 @@ inputs:
   conftest:
     description: 'Install conftest'
     required: false
+  consul:
+    description: 'Install consul'
+    required: false
   copa:
     description: 'Install copa'
     required: false
@@ -196,9 +199,6 @@ inputs:
     required: false
   k0sctl:
     description: 'Install k0sctl'
-    required: false
-  k10multicluster:
-    description: 'Install k10multicluster'
     required: false
   k10tools:
     description: 'Install k10tools'
