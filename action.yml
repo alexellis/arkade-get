@@ -257,6 +257,9 @@ inputs:
   kubecm:
     description: 'Install kubecm'
     required: false
+  kubecolor:
+    description: 'Install kubecolor'
+    required: false
   kubeconform:
     description: 'Install kubeconform'
     required: false
@@ -298,6 +301,9 @@ inputs:
     required: false
   kyverno:
     description: 'Install kyverno'
+    required: false
+  lazydocker:
+    description: 'Install lazydocker'
     required: false
   lazygit:
     description: 'Install lazygit'
