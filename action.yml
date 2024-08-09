@@ -200,9 +200,6 @@ inputs:
   k0sctl:
     description: 'Install k0sctl'
     required: false
-  k10tools:
-    description: 'Install k10tools'
-    required: false
   k3d:
     description: 'Install k3d'
     required: false
@@ -217,9 +214,6 @@ inputs:
     required: false
   kail:
     description: 'Install kail'
-    required: false
-  kanctl:
-    description: 'Install kanctl'
     required: false
   kgctl:
     description: 'Install kgctl'
@@ -277,9 +271,6 @@ inputs:
     required: false
   kubeseal:
     description: 'Install kubeseal'
-    required: false
-  kubestr:
-    description: 'Install kubestr'
     required: false
   kubetail:
     description: 'Install kubetail'
