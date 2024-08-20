@@ -270,6 +270,9 @@ inputs:
   kubetail:
     description: 'Install kubetail'
     required: false
+  kubetrim:
+    description: 'Install kubetrim'
+    required: false
   kubeval:
     description: 'Install kubeval'
     required: false
