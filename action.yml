@@ -215,6 +215,9 @@ inputs:
   kail:
     description: 'Install kail'
     required: false
+  keploy:
+    description: 'Install keploy'
+    required: false
   kgctl:
     description: 'Install kgctl'
     required: false
