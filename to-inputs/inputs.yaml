@@ -294,6 +294,9 @@ inputs:
   kyverno:
     description: 'Install kyverno'
     required: false
+  labctl:
+    description: 'Install labctl'
+    required: false
   lazydocker:
     description: 'Install lazydocker'
     required: false
