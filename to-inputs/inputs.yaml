@@ -84,6 +84,9 @@ inputs:
   croc:
     description: 'Install croc'
     required: false
+  crossplane:
+    description: 'Install crossplane'
+    required: false
   dagger:
     description: 'Install dagger'
     required: false
@@ -98,6 +101,9 @@ inputs:
     required: false
   doctl:
     description: 'Install doctl'
+    required: false
+  duplik8s:
+    description: 'Install duplik8s'
     required: false
   eksctl:
     description: 'Install eksctl'
@@ -131,6 +137,9 @@ inputs:
     required: false
   gh:
     description: 'Install gh'
+    required: false
+  glab:
+    description: 'Install glab'
     required: false
   golangci-lint:
     description: 'Install golangci-lint'
