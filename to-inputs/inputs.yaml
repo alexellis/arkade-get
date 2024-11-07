@@ -105,6 +105,9 @@ inputs:
   duplik8s:
     description: 'Install duplik8s'
     required: false
+  eks-node-viewer:
+    description: 'Install eks-node-viewer'
+    required: false
   eksctl:
     description: 'Install eksctl'
     required: false
@@ -288,6 +291,9 @@ inputs:
   kubeval:
     description: 'Install kubeval'
     required: false
+  kubie:
+    description: 'Install kubie'
+    required: false
   kumactl:
     description: 'Install kumactl'
     required: false
@@ -381,6 +387,9 @@ inputs:
   promtool:
     description: 'Install promtool'
     required: false
+  rclone:
+    description: 'Install rclone'
+    required: false
   regctl:
     description: 'Install regctl'
     required: false
@@ -389,6 +398,9 @@ inputs:
     required: false
   replicated:
     description: 'Install replicated'
+    required: false
+  rosa:
+    description: 'Install rosa'
     required: false
   rpk:
     description: 'Install rpk'
