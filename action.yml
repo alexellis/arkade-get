@@ -20,6 +20,9 @@ inputs:
   actuated-cli:
     description: 'Install actuated-cli'
     required: false
+  alloy:
+    description: 'Install alloy'
+    required: false
   argocd:
     description: 'Install argocd'
     required: false
