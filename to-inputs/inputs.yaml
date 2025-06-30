@@ -7,7 +7,7 @@ inputs:
 
   print-summary:
     description: 'Print a summary of tools installed by arkade'
-    default: true
+    default: false
     required: false
   actions-usage:
     description: 'Install actions-usage'
@@ -105,6 +105,9 @@ inputs:
   doctl:
     description: 'Install doctl'
     required: false
+  dotenv-linter:
+    description: 'Install dotenv-linter'
+    required: false
   duplik8s:
     description: 'Install duplik8s'
     required: false
@@ -143,6 +146,9 @@ inputs:
     required: false
   gh:
     description: 'Install gh'
+    required: false
+  git-who:
+    description: 'Install git-who'
     required: false
   glab:
     description: 'Install glab'
@@ -348,6 +354,9 @@ inputs:
   nerdctl:
     description: 'Install nerdctl'
     required: false
+  node_exporter:
+    description: 'Install node_exporter'
+    required: false
   nova:
     description: 'Install nova'
     required: false
@@ -389,6 +398,9 @@ inputs:
     required: false
   promtool:
     description: 'Install promtool'
+    required: false
+  pulumi:
+    description: 'Install pulumi'
     required: false
   rclone:
     description: 'Install rclone'
@@ -438,8 +450,8 @@ inputs:
   task:
     description: 'Install task'
     required: false
-  tctl:
-    description: 'Install tctl'
+  temporal:
+    description: 'Install temporal'
     required: false
   terraform:
     description: 'Install terraform'
