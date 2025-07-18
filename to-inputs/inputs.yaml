@@ -147,6 +147,9 @@ inputs:
   gh:
     description: 'Install gh'
     required: false
+  gha-bump:
+    description: 'Install gha-bump'
+    required: false
   git-who:
     description: 'Install git-who'
     required: false
