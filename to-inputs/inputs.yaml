@@ -375,6 +375,9 @@ inputs:
   opa:
     description: 'Install opa'
     required: false
+  opencode:
+    description: 'Install opencode'
+    required: false
   openshift-install:
     description: 'Install openshift-install'
     required: false
