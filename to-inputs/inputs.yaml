@@ -444,6 +444,9 @@ inputs:
   sops:
     description: 'Install sops'
     required: false
+  ssync:
+    description: 'Install ssync'
+    required: false
   stern:
     description: 'Install stern'
     required: false
