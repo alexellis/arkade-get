@@ -98,6 +98,9 @@ inputs:
   dagger:
     description: 'Install dagger'
     required: false
+  devpod:
+    description: 'Install devpod'
+    required: false
   devspace:
     description: 'Install devspace'
     required: false
