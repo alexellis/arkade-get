@@ -423,6 +423,9 @@ inputs:
   replicated:
     description: 'Install replicated'
     required: false
+  rg:
+    description: 'Install rg'
+    required: false
   rosa:
     description: 'Install rosa'
     required: false
