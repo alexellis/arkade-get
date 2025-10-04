@@ -159,6 +159,9 @@ inputs:
   glab:
     description: 'Install glab'
     required: false
+  glow:
+    description: 'Install glow'
+    required: false
   golangci-lint:
     description: 'Install golangci-lint'
     required: false
@@ -335,6 +338,9 @@ inputs:
     required: false
   linkerd2:
     description: 'Install linkerd2'
+    required: false
+  logcli:
+    description: 'Install logcli'
     required: false
   mc:
     description: 'Install mc'
