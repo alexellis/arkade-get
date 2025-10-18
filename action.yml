@@ -104,6 +104,9 @@ inputs:
   devspace:
     description: 'Install devspace'
     required: false
+  discord-updater:
+    description: 'Install discord-updater'
+    required: false
   dive:
     description: 'Install dive'
     required: false
