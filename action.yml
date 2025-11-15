@@ -119,6 +119,9 @@ inputs:
   dotenv-linter:
     description: 'Install dotenv-linter'
     required: false
+  dufs:
+    description: 'Install dufs'
+    required: false
   duplik8s:
     description: 'Install duplik8s'
     required: false
