@@ -263,6 +263,9 @@ inputs:
   kind:
     description: 'Install kind'
     required: false
+  kluctl:
+    description: 'Install kluctl'
+    required: false
   kops:
     description: 'Install kops'
     required: false
@@ -382,6 +385,9 @@ inputs:
     required: false
   nova:
     description: 'Install nova'
+    required: false
+  nu:
+    description: 'Install nu'
     required: false
   oc:
     description: 'Install oc'
