@@ -104,6 +104,9 @@ inputs:
   devspace:
     description: 'Install devspace'
     required: false
+  direnv:
+    description: 'Install direnv'
+    required: false
   discord-updater:
     description: 'Install discord-updater'
     required: false
@@ -124,6 +127,9 @@ inputs:
     required: false
   duplik8s:
     description: 'Install duplik8s'
+    required: false
+  dyff:
+    description: 'Install dyff'
     required: false
   eks-node-viewer:
     description: 'Install eks-node-viewer'
@@ -305,6 +311,9 @@ inputs:
   kubectx:
     description: 'Install kubectx'
     required: false
+  kubelogin:
+    description: 'Install kubelogin'
+    required: false
   kubens:
     description: 'Install kubens'
     required: false
@@ -410,6 +419,9 @@ inputs:
   operator-sdk:
     description: 'Install operator-sdk'
     required: false
+  opkssh:
+    description: 'Install opkssh'
+    required: false
   osm:
     description: 'Install osm'
     required: false
@@ -475,6 +487,9 @@ inputs:
     required: false
   ssync:
     description: 'Install ssync'
+    required: false
+  starship:
+    description: 'Install starship'
     required: false
   stern:
     description: 'Install stern'
