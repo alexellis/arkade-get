@@ -15,6 +15,12 @@ inputs:
   actuated-cli:
     description: 'Install actuated-cli'
     required: false
+  age:
+    description: 'Install age'
+    required: false
+  age-keygen:
+    description: 'Install age-keygen'
+    required: false
   alloy:
     description: 'Install alloy'
     required: false
