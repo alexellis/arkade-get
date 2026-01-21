@@ -60,6 +60,9 @@ inputs:
   civo:
     description: 'Install civo'
     required: false
+  claude:
+    description: 'Install claude'
+    required: false
   cloud-hypervisor:
     description: 'Install cloud-hypervisor'
     required: false
