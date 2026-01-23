@@ -24,6 +24,9 @@ inputs:
   alloy:
     description: 'Install alloy'
     required: false
+  amp:
+    description: 'Install amp'
+    required: false
   argocd:
     description: 'Install argocd'
     required: false
