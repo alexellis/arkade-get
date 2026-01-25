@@ -83,6 +83,9 @@ inputs:
   cmctl:
     description: 'Install cmctl'
     required: false
+  codex:
+    description: 'Install codex'
+    required: false
   conftest:
     description: 'Install conftest'
     required: false
