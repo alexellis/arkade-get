@@ -567,6 +567,9 @@ inputs:
   waypoint:
     description: 'Install waypoint'
     required: false
+  websocat:
+    description: 'Install websocat'
+    required: false
   yq:
     description: 'Install yq'
     required: false
