@@ -90,6 +90,9 @@ inputs:
   copa:
     description: 'Install copa'
     required: false
+  copilot:
+    description: 'Install copilot'
+    required: false
   cosign:
     description: 'Install cosign'
     required: false
@@ -104,6 +107,9 @@ inputs:
     required: false
   crossplane:
     description: 'Install crossplane'
+    required: false
+  crush:
+    description: 'Install crush'
     required: false
   dagger:
     description: 'Install dagger'
