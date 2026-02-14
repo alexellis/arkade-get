@@ -507,6 +507,9 @@ inputs:
   starship:
     description: 'Install starship'
     required: false
+  step:
+    description: 'Install step'
+    required: false
   stern:
     description: 'Install stern'
     required: false
