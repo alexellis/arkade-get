@@ -165,6 +165,9 @@ inputs:
   faasd:
     description: 'Install faasd'
     required: false
+  fd:
+    description: 'Install fd'
+    required: false
   firectl:
     description: 'Install firectl'
     required: false
