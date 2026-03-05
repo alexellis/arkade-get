@@ -27,6 +27,9 @@ inputs:
   amp:
     description: 'Install amp'
     required: false
+  argo:
+    description: 'Install argo'
+    required: false
   argocd:
     description: 'Install argocd'
     required: false
