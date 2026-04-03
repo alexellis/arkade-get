@@ -252,6 +252,9 @@ inputs:
   istioctl:
     description: 'Install istioctl'
     required: false
+  jg:
+    description: 'Install jg'
+    required: false
   jq:
     description: 'Install jq'
     required: false
