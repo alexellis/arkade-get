@@ -393,6 +393,9 @@ inputs:
   mc:
     description: 'Install mc'
     required: false
+  mediamtx:
+    description: 'Install mediamtx'
+    required: false
   metal:
     description: 'Install metal'
     required: false
