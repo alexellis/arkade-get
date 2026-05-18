@@ -1,6 +1,5 @@
-const os = require('os')
-const axios = require('axios')
-const path = require('path')
+import os from 'node:os'
+import path from 'node:path'
 
 function getDownloadArch(arch) {
   if (arch === 'x64') {
@@ -11,22 +10,15 @@ function getDownloadArch(arch) {
 }
 
 async function getDownloadUrl() {
-  let tag = "latest"
-  let response = null
-  try {
-    response = await axios({
-      url: "https://github.com/alexellis/arkade/releases/latest",
-      maxRedirects: 0,
-      method: "head",
-      timeout: 2500,
-      validateStatus: function (status) {
-        return status == 302
-      }
-    })
-    tag = response.headers.location;
-  } catch (error) {
-      throw error
+  const response = await fetch("https://github.com/alexellis/arkade/releases/latest", {
+    method: "HEAD",
+    redirect: "manual",
+    signal: AbortSignal.timeout(2500),
+  })
+  if (response.status !== 302) {
+    throw new Error(`unexpected status ${response.status} resolving latest arkade release`)
   }
+  const tag = response.headers.get("location")
   // https://github.com/alexellis/arkade/releases/tag/0.9.17
   let arch = getDownloadArch(os.arch())
 
