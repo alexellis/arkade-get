@@ -1,12 +1,13 @@
-const core = require('@actions/core');
-const exec = require('@actions/exec');
-const toolCache = require('@actions/tool-cache')
-const io = require("@actions/io")
+import * as core from '@actions/core'
+import * as exec from '@actions/exec'
+import * as toolCache from '@actions/tool-cache'
+import * as io from '@actions/io'
 
-const schema = require("./schema.json")
-const os = require('os')
-const fs = require('fs')
-const path = require('path')
+import os from 'node:os'
+import fs from 'node:fs'
+import path from 'node:path'
+
+import schema from './schema.json' with { type: 'json' }
 
 
 function getDownloadArch(arch) {
