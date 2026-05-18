@@ -15,11 +15,7 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        go-version: [1.22.x]
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Set Node.js 24.x
@@ -31,9 +27,9 @@ jobs:
           npm install
       - uses: alexellis/setup-arkade@v3
       - name: Install Go
-        uses: actions/setup-go@master
+        uses: actions/setup-go@v6
         with:
-          go-version: ${{ matrix.go-version }}
+          go-version: "1.26.x"
       - name: Regenerate changes
         run: |
           cd to-inputs
