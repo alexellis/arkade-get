@@ -464,6 +464,9 @@ inputs:
   packer:
     description: 'Install packer'
     required: false
+  pluto:
+    description: 'Install pluto'
+    required: false
   polaris:
     description: 'Install polaris'
     required: false
