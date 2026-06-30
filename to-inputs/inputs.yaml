@@ -165,9 +165,6 @@ inputs:
   faas-cli:
     description: 'Install faas-cli'
     required: false
-  faasd:
-    description: 'Install faasd'
-    required: false
   fd:
     description: 'Install fd'
     required: false
