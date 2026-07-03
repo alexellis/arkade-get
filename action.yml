@@ -110,6 +110,9 @@ inputs:
   crane:
     description: 'Install crane'
     required: false
+  crc:
+    description: 'Install crc'
+    required: false
   croc:
     description: 'Install croc'
     required: false
@@ -490,6 +493,9 @@ inputs:
     required: false
   replicated:
     description: 'Install replicated'
+    required: false
+  restic:
+    description: 'Install restic'
     required: false
   rg:
     description: 'Install rg'
