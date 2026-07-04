@@ -14,6 +14,9 @@ inputs:
     description: 'Print a summary of tools installed by arkade'
     default: false
     required: false
+  act:
+    description: 'Install act'
+    required: false
   actions-usage:
     description: 'Install actions-usage'
     required: false
@@ -281,6 +284,9 @@ inputs:
   k3sup:
     description: 'Install k3sup'
     required: false
+  k6:
+    description: 'Install k6'
+    required: false
   k9s:
     description: 'Install k9s'
     required: false
@@ -301,6 +307,9 @@ inputs:
     required: false
   kluctl:
     description: 'Install kluctl'
+    required: false
+  ko:
+    description: 'Install ko'
     required: false
   kops:
     description: 'Install kops'
@@ -454,6 +463,9 @@ inputs:
     required: false
   opkssh:
     description: 'Install opkssh'
+    required: false
+  oras:
+    description: 'Install oras'
     required: false
   osm:
     description: 'Install osm'
