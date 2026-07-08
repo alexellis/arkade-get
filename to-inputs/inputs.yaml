@@ -609,6 +609,9 @@ inputs:
   websocat:
     description: 'Install websocat'
     required: false
+  xq:
+    description: 'Install xq'
+    required: false
   yq:
     description: 'Install yq'
     required: false
