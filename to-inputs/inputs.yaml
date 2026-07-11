@@ -243,6 +243,9 @@ inputs:
   hugo:
     description: 'Install hugo'
     required: false
+  hunk:
+    description: 'Install hunk'
+    required: false
   influx:
     description: 'Install influx'
     required: false
