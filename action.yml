@@ -17,6 +17,9 @@ inputs:
   act:
     description: 'Install act'
     required: false
+  actionlint:
+    description: 'Install actionlint'
+    required: false
   actions-usage:
     description: 'Install actions-usage'
     required: false
