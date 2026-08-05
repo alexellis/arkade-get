@@ -300,8 +300,8 @@ inputs:
   kgctl:
     description: 'Install kgctl'
     required: false
-  kim:
-    description: 'Install kim'
+  kimi:
+    description: 'Install kimi'
     required: false
   kind:
     description: 'Install kind'
