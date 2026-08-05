@@ -14,6 +14,10 @@ inputs:
     description: 'Print a summary of tools installed by arkade'
     default: false
     required: false
+  download-timeout:
+    description: 'Timeout in milliseconds for downloading arkade'
+    default: '2500'
+    required: false
   act:
     description: 'Install act'
     required: false

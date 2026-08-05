@@ -18,12 +18,12 @@ function getDownloadArch(arch) {
   return ''
 }
 
-async function getDownloadUrl() {
+async function getDownloadUrl(timeout) {
   let tag = "latest"
   const response = await fetch("https://github.com/alexellis/arkade/releases/latest", {
     method: "HEAD",
     redirect: "manual",
-    signal: AbortSignal.timeout(2500),
+    signal: AbortSignal.timeout(timeout),
   })
   if (response.status !== 302) {
     throw new Error(`unexpected status ${response.status} resolving latest arkade release`)
@@ -46,7 +46,8 @@ async function run() {
 
     if(core.getInput("install-arkade") == "true") {
       core.info("Installing arkade into tool cache")
-      let arkadeBinaryUrl = await getDownloadUrl()
+      const timeout = parseInt(core.getInput("download-timeout"), 10) || 2500
+      let arkadeBinaryUrl = await getDownloadUrl(timeout)
 
       core.info(`Download URL: ${arkadeBinaryUrl}`)
       
