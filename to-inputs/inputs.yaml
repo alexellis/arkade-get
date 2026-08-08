@@ -90,6 +90,9 @@ inputs:
   codex:
     description: 'Install codex'
     required: false
+  codex-code-mode-host:
+    description: 'Install codex-code-mode-host'
+    required: false
   conftest:
     description: 'Install conftest'
     required: false
