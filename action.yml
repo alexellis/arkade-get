@@ -296,6 +296,9 @@ inputs:
   k6:
     description: 'Install k6'
     required: false
+  k8sgpt:
+    description: 'Install k8sgpt'
+    required: false
   k9s:
     description: 'Install k9s'
     required: false
@@ -616,6 +619,9 @@ inputs:
     required: false
   viddy:
     description: 'Install viddy'
+    required: false
+  vzzn:
+    description: 'Install vzzn'
     required: false
   waypoint:
     description: 'Install waypoint'
