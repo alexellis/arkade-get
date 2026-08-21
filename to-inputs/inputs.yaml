@@ -189,6 +189,9 @@ inputs:
   flyctl:
     description: 'Install flyctl'
     required: false
+  fq:
+    description: 'Install fq'
+    required: false
   fstail:
     description: 'Install fstail'
     required: false
@@ -452,6 +455,9 @@ inputs:
     required: false
   oh-my-posh:
     description: 'Install oh-my-posh'
+    required: false
+  oha:
+    description: 'Install oha'
     required: false
   op:
     description: 'Install op'
