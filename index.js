@@ -44,6 +44,14 @@ async function getDownloadUrl() {
 async function run() {
   try {
 
+    // Some minimal runner images do not include /usr/local/bin on PATH,
+    // where tooling installed by arkade may be expected.
+    const pathDirs = (process.env.PATH || "").split(path.delimiter)
+    if(!pathDirs.includes("/usr/local/bin")) {
+      core.info("Adding /usr/local/bin to PATH")
+      core.addPath("/usr/local/bin")
+    }
+
     if(core.getInput("install-arkade") == "true") {
       core.info("Installing arkade into tool cache")
       let arkadeBinaryUrl = await getDownloadUrl()
