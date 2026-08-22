@@ -29,12 +29,12 @@ function getDownloadSuffix() {
   return suffix
 }
 
-async function getDownloadUrl() {
+async function getDownloadUrl(resolveTimeout) {
   let tag = "latest"
   const response = await fetch("https://github.com/alexellis/arkade/releases/latest", {
     method: "HEAD",
     redirect: "manual",
-    signal: AbortSignal.timeout(2500),
+    signal: AbortSignal.timeout(resolveTimeout),
   })
   if (response.status !== 302) {
     throw new Error(`unexpected status ${response.status} resolving latest arkade release`)
@@ -67,7 +67,12 @@ async function run() {
 
     if(core.getInput("install-arkade") == "true") {
       core.info("Installing arkade into tool cache")
-      let arkadeBinaryUrl = await getDownloadUrl()
+
+      // Timeout for the HEAD request that resolves the latest
+      // release, not for downloading the binary itself.
+      const resolveTimeout = parseInt(core.getInput("resolve-timeout"), 10) || 10000
+
+      let arkadeBinaryUrl = await getDownloadUrl(resolveTimeout)
 
       core.info(`Download URL: ${arkadeBinaryUrl}`)
       
