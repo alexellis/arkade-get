@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v7
       - name: Set Node.js 24.x
         uses: actions/setup-node@v6
         with:
@@ -25,11 +25,14 @@ jobs:
       - name: Install with npm
         run: |
           npm install
-      - uses: alexellis/setup-arkade@v3
+      - uses: alexellis/setup-arkade@v4
       - name: Install Go
         uses: actions/setup-go@v6
         with:
           go-version: "1.26.x"
+          # The Go module lives in to-inputs/, not at the repo root,
+          # so the default build cache has nothing to key on.
+          cache: false
       - name: Regenerate changes
         run: |
           cd to-inputs
