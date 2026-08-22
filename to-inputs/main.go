@@ -62,6 +62,11 @@ func main() {
     description: 'Print a summary of tools installed by arkade'
     default: false
     required: false
+
+  resolve-timeout:
+    description: 'Timeout in milliseconds for resolving the latest arkade release, not for downloading it'
+    default: '10000'
+    required: false
 `)
 	lines := strings.Split(strings.TrimSpace(res.Stdout), "\n")
 	for _, line := range lines {
