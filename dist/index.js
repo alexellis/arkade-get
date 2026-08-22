@@ -34576,10 +34576,12 @@ async function run() {
 
     // Some minimal runner images do not include /usr/local/bin on PATH,
     // where tooling installed by arkade may be expected.
-    const pathDirs = (process.env.PATH || "").split(external_node_path_namespaceObject.delimiter)
-    if(!pathDirs.includes("/usr/local/bin")) {
-      info("Adding /usr/local/bin to PATH")
-      addPath("/usr/local/bin")
+    if(external_node_os_namespaceObject.platform() !== 'win32') {
+      const pathDirs = (process.env.PATH || "").split(external_node_path_namespaceObject.delimiter)
+      if(!pathDirs.includes("/usr/local/bin")) {
+        info("Adding /usr/local/bin to PATH")
+        addPath("/usr/local/bin")
+      }
     }
 
     if(getInput("install-arkade") == "true") {
@@ -34594,7 +34596,9 @@ async function run() {
 
       const cachePath = external_node_path_namespaceObject.dirname(pathToDownload)
 
-      const arkadeFinalPath = external_node_path_namespaceObject.join(cachePath, "arkade")
+      // Keep the .exe extension on Windows so the binary resolves.
+      const arkadeName = external_node_os_namespaceObject.platform() === 'win32' ? 'arkade.exe' : 'arkade'
+      const arkadeFinalPath = external_node_path_namespaceObject.join(cachePath, arkadeName)
 
       info(`Moving arkade from ${pathToDownload} to ${arkadeFinalPath}`)
       await mv(pathToDownload, arkadeFinalPath)
