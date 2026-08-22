@@ -34529,12 +34529,23 @@ const schema_namespaceObject = /*#__PURE__*/JSON.parse('["act","actionlint","act
 
 
 
-function getDownloadArch(arch) {
-  if (arch === 'arm64') {
-    return '-arm64'
+function getDownloadSuffix() {
+  // Release assets are named for the OS too:
+  // arkade (linux/x86_64), arkade-arm64 (linux), arkade-armhf,
+  // arkade-darwin, arkade-darwin-arm64, arkade.exe.
+  let suffix = ""
+
+  if (external_node_os_namespaceObject.platform() === 'darwin') {
+    suffix += '-darwin'
   }
-  
-  return ''
+
+  if (external_node_os_namespaceObject.arch() === 'arm64') {
+    suffix += '-arm64'
+  } else if (external_node_os_namespaceObject.arch() === 'arm') {
+    suffix += '-armhf'
+  }
+
+  return suffix
 }
 
 async function getDownloadUrl() {
@@ -34554,9 +34565,9 @@ async function getDownloadUrl() {
 
   tag = tag.replace("tag", "download")
 
-  let arch = getDownloadArch(external_node_os_namespaceObject.arch())
-  info(`Arch: ${external_node_os_namespaceObject.arch()}`)
-  return `${tag}/arkade${arch}`
+  const suffix = external_node_os_namespaceObject.platform() === 'win32' ? '.exe' : getDownloadSuffix()
+  info(`Platform: ${external_node_os_namespaceObject.platform()} Arch: ${external_node_os_namespaceObject.arch()}`)
+  return `${tag}/arkade${suffix}`
 }
 
 // most @actions toolkit packages have async methods
