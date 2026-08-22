@@ -10,12 +10,23 @@ import path from 'node:path'
 import schema from './schema.json' with { type: 'json' }
 
 
-function getDownloadArch(arch) {
-  if (arch === 'arm64') {
-    return '-arm64'
+function getDownloadSuffix() {
+  // Release assets are named for the OS too:
+  // arkade (linux/x86_64), arkade-arm64 (linux), arkade-armhf,
+  // arkade-darwin, arkade-darwin-arm64, arkade.exe.
+  let suffix = ""
+
+  if (os.platform() === 'darwin') {
+    suffix += '-darwin'
   }
-  
-  return ''
+
+  if (os.arch() === 'arm64') {
+    suffix += '-arm64'
+  } else if (os.arch() === 'arm') {
+    suffix += '-armhf'
+  }
+
+  return suffix
 }
 
 async function getDownloadUrl() {
@@ -35,9 +46,9 @@ async function getDownloadUrl() {
 
   tag = tag.replace("tag", "download")
 
-  let arch = getDownloadArch(os.arch())
-  core.info(`Arch: ${os.arch()}`)
-  return `${tag}/arkade${arch}`
+  const suffix = os.platform() === 'win32' ? '.exe' : getDownloadSuffix()
+  core.info(`Platform: ${os.platform()} Arch: ${os.arch()}`)
+  return `${tag}/arkade${suffix}`
 }
 
 // most @actions toolkit packages have async methods
