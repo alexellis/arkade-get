@@ -551,6 +551,9 @@ inputs:
   snowmachine:
     description: 'Install snowmachine'
     required: false
+  sofka:
+    description: 'Install sofka'
+    required: false
   sops:
     description: 'Install sops'
     required: false
