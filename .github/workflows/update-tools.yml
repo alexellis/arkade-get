@@ -27,7 +27,7 @@ jobs:
           npm install
       - uses: alexellis/setup-arkade@v4
       - name: Install Go
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@v7
         with:
           go-version: "1.26.x"
           # The Go module lives in to-inputs/, not at the repo root,
