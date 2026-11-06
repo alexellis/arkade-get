@@ -482,6 +482,9 @@ inputs:
   opencode:
     description: 'Install opencode'
     required: false
+  opencode2:
+    description: 'Install opencode2'
+    required: false
   openshift-install:
     description: 'Install openshift-install'
     required: false
